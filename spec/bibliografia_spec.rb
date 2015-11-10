@@ -109,8 +109,12 @@ end
 describe Lista do
     before :all do
         @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
-        @lista = Lista.new();
-        @lista2 = Lista.new();
+        @b2 = Bibliog.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @b3 = Bibliog.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @b4 = Bibliog.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25', 2010, ['1934356379','9781934356371'], 'The Facets of Ruby')
+        @b5 = Bibliog.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
+        @lista = Lista.new()
+        @lista2 = Lista.new()
     end
     describe "# creacion de una lista" do
         it "Debe existir un nodo inicio nulo" do
@@ -135,4 +139,14 @@ describe Lista do
             @lista2.extraer.should eq(@b1)
         end
     end
+    describe "# insertar varios elementos" do
+        it "Se puede insertar varios elementos" do
+            @lista2.insertar(@b1).should eq(true)
+            @lista2.insertar(@b2).should eq(true)
+            @lista2.insertar(@b3).should eq(true)
+            @lista2.insertar(@b4).should eq(true)
+            @lista2.insertar(@b5).should eq(true)
+        end
+    end
+            
 end
