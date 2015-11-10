@@ -95,13 +95,18 @@ describe Nodo do
         @nodo1 = Nodo.new(1,2);
     end
     describe "# almacenamiento de un valor" do
-        it "Debe existe un valor" do
+        it "Debe existir un valor" do
             @nodo1.value.should eq(1)
         end
     end
     describe "# almacenamiento de un siguiente" do
-        it "Debe existe un siguiente" do
+        it "Debe existir un siguiente" do
             @nodo1.next.should eq(2)
+        end
+    end
+    describe "# obtener de un valor" do
+        it "Debe existir un metodo para obtener el valor" do
+            @nodo1.get_value.should eq(1)
         end
     end
 end
