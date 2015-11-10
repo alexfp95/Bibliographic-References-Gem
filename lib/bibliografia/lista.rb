@@ -1,4 +1,4 @@
-Nodo = Struct.new()
+Nodo = Struct.new(:value)
 
 class Lista
     
