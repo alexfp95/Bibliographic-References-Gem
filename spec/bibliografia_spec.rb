@@ -108,6 +108,7 @@ end
 
 describe Lista do
     before :all do
+        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
         @lista = Lista.new();
     end
     describe "# creacion de una lista" do
@@ -116,6 +117,11 @@ describe Lista do
         end
         it "Debe existir un nodo final nulo" do
             @lista.final.should eq(nil)
+        end
+    end
+    describe "# metodo para ver si esta vacia" do
+        it "Debe existir un metodo para ver si esta vacia" do
+            @lista.vacia.should eq(true)
         end
     end
 end
