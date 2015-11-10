@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'bibliografia/bibliog'
+require 'bibliografia/lista'
 
 describe Bibliog do
     before :all do
