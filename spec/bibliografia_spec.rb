@@ -107,5 +107,15 @@ describe Nodo do
 end
 
 describe Lista do
-
+    before :all do
+        @lista = Lista.new();
+    end
+    describe "# creacion de una lista" do
+        it "Debe existir un nodo inicio nulo" do
+            @lista.inicio.should eq(nil)
+        end
+        it "Debe existir un nodo final nulo" do
+            @lista.final.should eq(nil)
+        end
+    end
 end
