@@ -92,11 +92,16 @@ end
 
 describe Nodo do
     before :all do
-        @nodo1 = Nodo.new(1);
+        @nodo1 = Nodo.new(1,2);
     end
     describe "# almacenamiento de un valor" do
         it "Debe existe un valor" do
             @nodo1.value.should eq(1)
+        end
+    end
+    describe "# almacenamiento de un siguiente" do
+        it "Debe existe un siguiente" do
+            @nodo1.next.should eq(2)
         end
     end
 end
