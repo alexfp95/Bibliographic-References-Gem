@@ -91,7 +91,14 @@ describe Bibliog do
 end
 
 describe Nodo do
-    
+    before :all do
+        @nodo1 = Nodo.new(1);
+    end
+    describe "# almacenamiento de un valor" do
+        it "Debe existe un valor" do
+            @nodo1.value.should eq(1)
+        end
+    end
 end
 
 describe Lista do
