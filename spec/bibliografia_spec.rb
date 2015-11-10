@@ -132,7 +132,7 @@ describe Lista do
     end
     describe "# metodo para extraer un elemento" do
         it "Debe existir un metodo para extraer un elemento" do
-            lista2.extraer.should eq(@b1)
+            @lista2.extraer.should eq(@b1)
         end
     end
 end
