@@ -104,11 +104,6 @@ describe Nodo do
             @nodo1.next.should eq(2)
         end
     end
-    describe "# obtener de un valor" do
-        it "Debe existir un metodo para obtener el valor" do
-            @nodo1.get_value.should eq(1)
-        end
-    end
 end
 
 describe Lista do
