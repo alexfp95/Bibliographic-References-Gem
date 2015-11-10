@@ -90,6 +90,10 @@ describe Bibliog do
     end
 end
 
-describe Lista do
+describe Nodo do
     
+end
+
+describe Lista do
+
 end
