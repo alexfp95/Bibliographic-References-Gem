@@ -15,4 +15,16 @@ class Lista
             return false
         end
     end
+    
+    def insertar (elemento)
+        nodo = Nodo.new(elemento,nil)
+        if(vacia)
+            @inicio = nodo
+            @final = @inicio
+        else
+            @final.next = nodo
+            @final = nodo
+        end
+        true
+    end
 end
