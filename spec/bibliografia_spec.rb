@@ -107,7 +107,7 @@ describe Nodo do
 end
 
 describe Lista do
-    before :all do
+    before :each do
         @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
         @b2 = Bibliog.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @b3 = Bibliog.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
@@ -115,6 +115,7 @@ describe Lista do
         @b5 = Bibliog.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
         @lista = Lista.new()
         @lista2 = Lista.new()
+        @lista3 = Lista.new()
     end
     describe "# creacion de una lista" do
         it "Debe existir un nodo inicio nulo" do
@@ -129,24 +130,24 @@ describe Lista do
             @lista.vacia.should eq(true)
         end
     end
-    describe "# metodo para insertar un elemento" do
-        it "Debe existir un metodo para insertar un elemento" do
+    describe "# metodo para insertar y metodo para extraer un elemento" do
+        it "Debe existir un metodo para insertar un elemento y otro para extraerlo" do
             @lista2.insertar(@b1).should eq(true)
-        end
-    end
-    describe "# metodo para extraer un elemento" do
-        it "Debe existir un metodo para extraer un elemento" do
             @lista2.extraer.should eq(@b1)
         end
     end
-    describe "# insertar varios elementos" do
-        it "Se puede insertar varios elementos" do
-            @lista2.insertar(@b1).should eq(true)
-            @lista2.insertar(@b2).should eq(true)
-            @lista2.insertar(@b3).should eq(true)
-            @lista2.insertar(@b4).should eq(true)
-            @lista2.insertar(@b5).should eq(true)
+    describe "# insertar y extraer varios elementos" do
+        it "Se puede insertar y extraer varios elementos" do
+            @lista3.insertar(@b1).should eq(true)
+            @lista3.insertar(@b2).should eq(true)
+            @lista3.insertar(@b3).should eq(true)
+            @lista3.insertar(@b4).should eq(true)
+            @lista3.insertar(@b5).should eq(true)
+            @lista3.extraer.should eq(@b1)
+            @lista3.extraer.should eq(@b2)
+            @lista3.extraer.should eq(@b3)
+            @lista3.extraer.should eq(@b4)
+            @lista3.extraer.should eq(@b5)
         end
     end
-            
 end
