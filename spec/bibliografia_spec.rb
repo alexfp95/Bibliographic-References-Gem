@@ -155,9 +155,9 @@ describe Lista do
             @lista3.extraer.should eq(@b5)
         end
     end
-    #describe "# insertar(inicio) y extraer(final)" do
-    #    it "Se puede insertar por el inicio" do
-    #        @lista3.insertar_inicio(@b1).should eq(true)
-    #    end
-    #end
+    describe "# insertar(inicio) y extraer(final)" do
+        it "Se puede insertar por el inicio" do
+            @lista3.insertar_inicio(@b1).should eq(true)
+        end
+    end
 end
