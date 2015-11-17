@@ -85,6 +85,9 @@ class Libro < Bibliog
     end
 end
 
-class Revista
+class Revista < Bibliog
+    def initialize
+        
+    end
     
 end
