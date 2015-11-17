@@ -175,9 +175,12 @@ describe Libro do
         end
     end
     
-    describe " comprobar la jerarquia de clase Bibliog" do
-        it "Pertenece a la jerarquia de clase Bibliog" do
-           (@l1.is_a?Bibliog).should eq(true)
+    describe " comprobar la jerarquia de clases del objeto" do
+        it "Pertenece a la jerarquia de clase de Bibliog" do
+            (@l1.is_a?Bibliog).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de Object" do
+            (@l1.is_a?Object).should eq(true)
         end
     end
 end
