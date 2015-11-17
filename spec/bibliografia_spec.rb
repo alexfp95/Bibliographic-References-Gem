@@ -222,4 +222,10 @@ describe Revista do
             (@r1.instance_of?Bibliog).should eq(false)
         end
     end
+    
+    describe "# comprobar si responde a un metodo de su madre" do
+        it "Debe responder a un metodo de su madre" do
+            @r1.respond_to?(:autores).should eq(true)
+        end
+    end
 end

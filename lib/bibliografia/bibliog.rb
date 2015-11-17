@@ -89,5 +89,4 @@ class Revista < Bibliog
     def initialize
         
     end
-    
 end
