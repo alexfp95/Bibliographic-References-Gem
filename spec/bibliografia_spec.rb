@@ -189,5 +189,13 @@ describe Libro do
 end
 
 describe Revista do
+    before :all do
+        @l1 = Revista.new
+    end
     
+    describe "# comprobar la instancia del objeto" do
+        it "Pertenece a la instancia de Revista" do
+           (@l1.instance_of?Revista).should eq(true)
+        end
+    end
 end
