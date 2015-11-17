@@ -165,5 +165,13 @@ describe Lista do
 end
 
 describe Libro do
+    before :all do
+        @l1 = Libro.new
+    end
     
+    describe "# comprobar la instancia de un objeto" do
+        it "Pertenece a la instancia de Libro" do
+           (@l1.instance_of?Libro).should eq(true)
+        end
+    end
 end
