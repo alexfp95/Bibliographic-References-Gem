@@ -84,3 +84,7 @@ class Libro < Bibliog
         
     end
 end
+
+class Revista
+    
+end
