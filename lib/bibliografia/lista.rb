@@ -41,5 +41,18 @@ class Lista
             return valor
         end
     end
+    
+    def insertar_inicio (elemento)
+        nodo = Nodo.new(elemento,nil,nil)
+        if(vacia == true)
+            @final = nodo
+            @inicio = nodo
+        else
+            nodo.next = @inicio
+            @inicio.prev = nodo
+            @inicio = nodo
+        end
+        true
+    end
         
 end
