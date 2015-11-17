@@ -80,9 +80,7 @@ end
 
 
 class Libro < Bibliog
-    
     def initialize
         
     end
-    
 end

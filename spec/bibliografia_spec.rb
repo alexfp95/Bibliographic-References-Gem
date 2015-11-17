@@ -182,5 +182,8 @@ describe Libro do
         it "Pertenece a la jerarquia de clase de Object" do
             (@l1.is_a?Object).should eq(true)
         end
+        it "Pertenece a la jerariquia de clase de BasicObject" do
+            (@l1.is_a?BasicObject).should eq(true)
+        end
     end
 end
