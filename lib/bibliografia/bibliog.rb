@@ -77,3 +77,8 @@ class Bibliog
         cadena = "#{cadena}"+"#{get_isbn}"
     end
 end
+
+
+class Libro < Bibliog
+    
+end
