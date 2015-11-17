@@ -242,8 +242,20 @@ describe Periodico do
     end
     
     describe "# comprobar la instancia del objeto" do
-        it "Es una instancia de Revista" do
+        it "Es una instancia de Periodico" do
            (@p1.instance_of?Periodico).should eq(true)
+        end
+    end
+    
+    describe "# comprobar la jerarquia de clases del objeto" do
+        it "Pertenece a la jerarquia de clase de Bibliog" do
+            (@p1.is_a?Bibliog).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de Object" do
+            (@p1.is_a?Object).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de BasicObject" do
+            (@p1.is_a?BasicObject).should eq(true)
         end
     end
 end
