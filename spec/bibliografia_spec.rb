@@ -307,3 +307,8 @@ describe Electronico do
         end
     end
 end
+
+describe "# comprobar si funciona Guard" do
+    it "Esta prueba se escribe para modificar y guardar el archivo" do
+    end
+end
