@@ -1,4 +1,4 @@
-Nodo = Struct.new(:value,:next)
+Nodo = Struct.new(:value,:next,:prev)
 
 class Lista
     attr_reader :inicio, :final
