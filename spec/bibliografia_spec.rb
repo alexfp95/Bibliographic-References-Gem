@@ -237,5 +237,13 @@ describe Revista do
 end
 
 describe Periodico do
-
+    before :all do
+        @r1 = Revista.new
+    end
+    
+    describe "# comprobar la instancia del objeto" do
+        it "Es una instancia de Revista" do
+           (@r1.instance_of?Revista).should eq(true)
+        end
+    end
 end
