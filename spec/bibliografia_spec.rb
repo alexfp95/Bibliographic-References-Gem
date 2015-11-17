@@ -271,3 +271,7 @@ describe Periodico do
         end
     end
 end
+
+describe Electronico do
+    
+end
