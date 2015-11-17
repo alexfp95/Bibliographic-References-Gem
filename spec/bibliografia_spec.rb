@@ -282,4 +282,16 @@ describe Electronico do
            (@e1.instance_of?Electronico).should eq(true)
         end
     end
+    
+    describe "# comprobar la jerarquia de clases del objeto" do
+        it "Pertenece a la jerarquia de clase de Bibliog" do
+            (@e1.is_a?Bibliog).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de Object" do
+            (@e1.is_a?Object).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de BasicObject" do
+            (@e1.is_a?BasicObject).should eq(true)
+        end
+    end
 end
