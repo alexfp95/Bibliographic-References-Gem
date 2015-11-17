@@ -190,12 +190,24 @@ end
 
 describe Revista do
     before :all do
-        @l1 = Revista.new
+        @r1 = Revista.new
     end
     
     describe "# comprobar la instancia del objeto" do
         it "Pertenece a la instancia de Revista" do
-           (@l1.instance_of?Revista).should eq(true)
+           (@r1.instance_of?Revista).should eq(true)
+        end
+    end
+    
+    describe " comprobar la jerarquia de clases del objeto" do
+        it "Pertenece a la jerarquia de clase de Bibliog" do
+            (@r1.is_a?Bibliog).should eq(true)
+        end
+        it "Pertenece a la jerarquia de clase de Object" do
+            (@r1.is_a?Object).should eq(true)
+        end
+        it "Pertenece a la jerariquia de clase de BasicObject" do
+            (@r1.is_a?BasicObject).should eq(true)
         end
     end
 end
