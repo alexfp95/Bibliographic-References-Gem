@@ -170,7 +170,7 @@ describe Libro do
     end
     
     describe "# comprobar la instancia del objeto" do
-        it "Pertenece a la instancia de Libro" do
+        it "Es una la instancia de Libro" do
            (@l1.instance_of?Libro).should eq(true)
         end
     end
@@ -182,7 +182,7 @@ describe Libro do
         it "Pertenece a la jerarquia de clase de Object" do
             (@l1.is_a?Object).should eq(true)
         end
-        it "Pertenece a la jerariquia de clase de BasicObject" do
+        it "Pertenece a la jerarquia de clase de BasicObject" do
             (@l1.is_a?BasicObject).should eq(true)
         end
     end
@@ -194,7 +194,7 @@ describe Revista do
     end
     
     describe "# comprobar la instancia del objeto" do
-        it "Pertenece a la instancia de Revista" do
+        it "Es una instancia de Revista" do
            (@r1.instance_of?Revista).should eq(true)
         end
     end
@@ -206,8 +206,14 @@ describe Revista do
         it "Pertenece a la jerarquia de clase de Object" do
             (@r1.is_a?Object).should eq(true)
         end
-        it "Pertenece a la jerariquia de clase de BasicObject" do
+        it "Pertenece a la jerarquia de clase de BasicObject" do
             (@r1.is_a?BasicObject).should eq(true)
+        end
+    end
+    
+    describe "# comprobar la instancia del objeto con su madre" do
+        it "No es una instancia de Bibliog" do
+            (@r1.instance_of?Bibliog).should eq(false)
         end
     end
 end
