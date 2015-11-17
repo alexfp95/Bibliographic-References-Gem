@@ -258,4 +258,10 @@ describe Periodico do
             (@p1.is_a?BasicObject).should eq(true)
         end
     end
+    
+    describe "# comprobar la instancia del objeto con su madre" do
+        it "No es una instancia de Bibliog" do
+            (@p1.instance_of?Bibliog).should eq(false)
+        end
+    end
 end
