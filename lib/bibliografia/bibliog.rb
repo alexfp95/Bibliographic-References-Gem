@@ -91,6 +91,8 @@ class Revista < Bibliog
     end
 end
 
-class Periodico
+class Periodico < Bibliog
+    def initialize
     
+    end
 end
