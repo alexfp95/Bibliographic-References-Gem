@@ -273,5 +273,13 @@ describe Periodico do
 end
 
 describe Electronico do
+    before :all do
+        @e1 = Electronico.new
+    end
     
+    describe "# comprobar la instancia del objeto" do
+        it "Es una instancia de Electronico" do
+           (@e1.instance_of?Electronico).should eq(true)
+        end
+    end
 end
