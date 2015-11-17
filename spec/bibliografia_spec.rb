@@ -187,3 +187,7 @@ describe Libro do
         end
     end
 end
+
+describe Revista do
+    
+end
