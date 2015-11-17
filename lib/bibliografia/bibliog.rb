@@ -90,3 +90,7 @@ class Revista < Bibliog
         
     end
 end
+
+class Periodico
+    
+end
