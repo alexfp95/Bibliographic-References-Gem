@@ -97,6 +97,8 @@ class Periodico < Bibliog
     end
 end
 
-class Electronico
-    
+class Electronico < Bibliog
+    def initialize
+        
+    end
 end
