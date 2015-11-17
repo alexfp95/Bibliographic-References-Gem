@@ -79,6 +79,6 @@ class Bibliog
 end
 
 
-class Libro
+class Libro < Bibliog
     
 end
