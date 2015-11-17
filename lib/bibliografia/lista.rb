@@ -16,8 +16,8 @@ class Lista
         end
     end
     
-    def insertar (elemento)
-        nodo = Nodo.new(elemento,nil)
+    def insertar (elemento) #por el final
+        nodo = Nodo.new(elemento,nil,@final)
         if(vacia == true)
             @final = nodo
             @inicio = nodo
@@ -28,12 +28,13 @@ class Lista
         true
     end
     
-    def extraer
+    def extraer #por el inicio
         if(vacia == true)
             return false
         else
             valor = @inicio.value
             @inicio = @inicio.next
+            @inicio.prev = nil
             return valor
         end
     end
