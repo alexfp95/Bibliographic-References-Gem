@@ -54,5 +54,19 @@ class Lista
         end
         true
     end
-        
+    
+    def extraer_final
+        if(vacia == true)
+            return false
+        else
+            valor = @final.value
+            @final = @final.prev
+            if(@final == nil)
+                @inicio = nil
+            else
+                @final.next = nil
+            end
+            return valor
+        end
+    end
 end
