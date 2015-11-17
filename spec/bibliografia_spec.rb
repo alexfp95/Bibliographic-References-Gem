@@ -156,8 +156,10 @@ describe Lista do
         end
     end
     describe "# insertar(inicio) y extraer(final)" do
-        it "Se puede insertar por el inicio" do
+        it "Se puede insertar por el inicio y extraer por el final" do
+            @lista3.insertar(@b2).should eq(true)
             @lista3.insertar_inicio(@b1).should eq(true)
+            @lista3.extraer_final.should eq(@b2)
         end
     end
 end
