@@ -17,11 +17,12 @@ class Lista
     end
     
     def insertar (elemento) #por el final
-        nodo = Nodo.new(elemento,nil,@final)
+        nodo = Nodo.new(elemento,nil,nil)
         if(vacia == true)
             @final = nodo
             @inicio = nodo
         else
+            nodo.prev = @final
             @final.next = nodo
             @final = nodo
         end
@@ -34,7 +35,9 @@ class Lista
         else
             valor = @inicio.value
             @inicio = @inicio.next
-            @inicio.prev = nil
+            if(vacia == false)
+                @inicio.prev = nil
+            end
             return valor
         end
     end
