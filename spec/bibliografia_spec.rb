@@ -235,3 +235,7 @@ describe Revista do
         end
     end
 end
+
+describe Periodico do
+
+end
