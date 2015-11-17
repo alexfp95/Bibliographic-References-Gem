@@ -169,9 +169,15 @@ describe Libro do
         @l1 = Libro.new
     end
     
-    describe "# comprobar la instancia de un objeto" do
+    describe "# comprobar la instancia del objeto" do
         it "Pertenece a la instancia de Libro" do
            (@l1.instance_of?Libro).should eq(true)
+        end
+    end
+    
+    describe " comprobar la jerarquia de clase Bibliog" do
+        it "Pertenece a la jerarquia de clase Bibliog" do
+           (@l1.is_a?Bibliog).should eq(true)
         end
     end
 end
