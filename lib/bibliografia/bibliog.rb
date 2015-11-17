@@ -96,3 +96,7 @@ class Periodico < Bibliog
     
     end
 end
+
+class Electronico
+    
+end
