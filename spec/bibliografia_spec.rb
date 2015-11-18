@@ -282,6 +282,12 @@ describe Periodico do
             @p1.respond_to?(:autores).should eq(true)
         end
     end
+    
+    describe "# comprobar si responde a un metodo propio" do
+        it "Debe responder a un metodo propio" do
+            @p1.respond_to?(:columnas).should eq(true)
+        end
+    end
 end
 
 describe Electronico do
