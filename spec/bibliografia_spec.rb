@@ -208,7 +208,7 @@ end
 
 describe Revista do
     before :all do
-        @r1 = Revista.new
+        @r1 = Revista.new('Felipe', 'Decoracion de hogar', 'Hogares', 5, 'January 1', 2015, 9857425)
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -238,6 +238,12 @@ describe Revista do
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
             @r1.respond_to?(:autores).should eq(true)
+        end
+    end
+    
+    describe "# comprobar si responde a un metodo propio" do
+        it "Debe responder a un metodo propio" do
+            @r1.respond_to?(:issn).should eq(true)
         end
     end
 end
