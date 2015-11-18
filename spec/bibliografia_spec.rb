@@ -250,7 +250,7 @@ end
 
 describe Periodico do
     before :all do
-        @p1 = Periodico.new
+        @p1 = Periodico.new('Maria', 'Diario de avisos', 'Noticias', 1, 'February 10', 2013, 15)
     end
     
     describe "# comprobar la instancia del objeto" do

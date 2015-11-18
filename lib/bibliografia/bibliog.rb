@@ -99,8 +99,11 @@ class Revista < Bibliog
 end
 
 class Periodico < Bibliog
-    def initialize
+    attr_reader :columnas
     
+    def initialize (a, t, e, ed, mes, anno, columnas, s="none")
+        super(a,t,e,ed,mes,anno,"none",s)
+        @columnas=columnas
     end
 end
 
