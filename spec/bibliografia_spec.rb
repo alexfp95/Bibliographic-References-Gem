@@ -201,7 +201,7 @@ describe Libro do
     
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
-            l1.respond_to?(:isbnl).should eq(true)
+            @l1.respond_to?(:isbnl).should eq(true)
         end
     end
 end
