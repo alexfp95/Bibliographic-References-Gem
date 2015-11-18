@@ -90,8 +90,11 @@ class Libro < Bibliog
 end
 
 class Revista < Bibliog
-    def initialize
-        
+    attr_reader :issn
+    
+    def initialize (a, t, e, ed, mes, anno, issn, s="none")
+        super(a,t,e,ed,mes,anno,"none",s)
+        @issn=issn
     end
 end
 
