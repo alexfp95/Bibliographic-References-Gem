@@ -108,7 +108,10 @@ class Periodico < Bibliog
 end
 
 class Electronico < Bibliog
-    def initialize
-        
+    attr_reader :url
+    
+    def initialize (a, t, e, ed, mes, anno, url, s="none")
+        super(a,t,e,ed,mes,anno,"none",s)
+        @url=url
     end
 end
