@@ -166,7 +166,7 @@ end
 
 describe Libro do
     before :all do
-        @l1 = Libro.new
+        @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -196,6 +196,12 @@ describe Libro do
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
             @l1.respond_to?(:autores).should eq(true)
+        end
+    end
+    
+    describe "# comprobar si responde a un metodo propio" do
+        it "Debe responder a un metodo propio" do
+            l1.respond_to?(:isbnl).should eq(true)
         end
     end
 end

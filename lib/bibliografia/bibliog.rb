@@ -1,7 +1,7 @@
 class Bibliog
     attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
     
-    def initialize(a, t, e, ed, mes, anno, isbn, s="none")
+    def initialize(a, t, e, ed, mes, anno, isbn='none', s="none")
         @autores = a
         @titulo = t
         @serie = s
@@ -68,7 +68,7 @@ class Bibliog
         end
         cadena
     end
-    
+
     def to_s
         cadena = "#{get_autores}.\n"
         cadena = "#{cadena}"+"#{get_titulo}\n"
@@ -80,9 +80,7 @@ end
 
 
 class Libro < Bibliog
-    def initialize
-        
-    end
+   
 end
 
 class Revista < Bibliog
