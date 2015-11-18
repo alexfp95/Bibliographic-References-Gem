@@ -292,7 +292,7 @@ end
 
 describe Electronico do
     before :all do
-        @e1 = Electronico.new
+        @e1 = Electronico.new('Alexis', 'Programa en Java', 'Programming', 3, 'November 17', 2015, 'www.urldelbook.com')
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -322,6 +322,12 @@ describe Electronico do
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
             @e1.respond_to?(:autores).should eq(true)
+        end
+    end
+    
+    describe "# comprobar si responde a un metodo propio" do
+        it "Debe responder a un metodo propio" do
+            @e1.respond_to?(:url).should eq(true)
         end
     end
 end
