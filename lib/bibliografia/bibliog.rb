@@ -77,10 +77,24 @@ class Bibliog
         cadena = "#{cadena}"+"#{get_editorial}; #{get_edicion} edition (#{get_fecha})\n"
         cadena = "#{cadena}"+"#{get_isbn}"
     end
+    
+    def <=>(other)
+        return nil unless other.is_a? Bibliog
+        if (@titulo == other.titulo)
+            if (@anno == other.anno)
+                @mes <=> other.mes
+            else
+                @anno <=> other.anno
+            end
+        else
+            @titulo <=> other.titulo
+        end
+    end
 end
 
 
 class Libro < Bibliog
+    #include Comparable
     attr_reader :isbnl
     
     def initialize (a, t, e, ed, mes, anno, isbnl, s="none")
@@ -88,6 +102,9 @@ class Libro < Bibliog
         @isbnl=isbnl
     end
     
+    #def <=>(other)
+    #    super
+    #end
 end
 
 class Revista < Bibliog

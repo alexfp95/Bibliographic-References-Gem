@@ -167,7 +167,7 @@ end
 describe Libro do
     before :all do
         @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
-        @l2 = Libro.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @l2 = Libro.new('David Flanagan', 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
     end
     
     describe "# comprobar la instancia del objeto" do
