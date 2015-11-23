@@ -168,6 +168,7 @@ describe Libro do
     before :all do
         @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @l2 = Libro.new('David Flanagan', 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @l3 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -218,6 +219,9 @@ describe Libro do
         end
         it "El libro @l2 es mayor o igual que el libro @l1" do
             expect(@l2 >= @l1).to eq(true)
+        end
+        it "El libro @l1 es igual que el libro @l3" do
+            expect(@l1 == @l3).to eq(true)
         end
     end
 end
