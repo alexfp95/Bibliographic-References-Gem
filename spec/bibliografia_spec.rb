@@ -213,6 +213,9 @@ describe Libro do
         it "El libro @l1 es menor o igual que el libro @l2" do
             expect(@l1 <= @l2).to eq(true)
         end
+        it "El libro @l2 es mayor que el libro @l1" do
+            expect(@l2 > @l1).to eq(true)
+        end
     end
 end
 
