@@ -70,4 +70,12 @@ class Lista
             return valor
         end
     end
+    
+    def each
+        nodo = @inicio
+        while (nodo != nil)
+            yield nodo.value
+            nodo = nodo.next
+        end
+    end
 end

@@ -165,6 +165,11 @@ describe Lista do
     
     describe "# haciendo la lista enumerable" do
         it "Comprobar el metodo max" do
+            @lista3.insertar(@b1).should eq(true)
+            @lista3.insertar(@b2).should eq(true)
+            @lista3.insertar(@b3).should eq(true)
+            @lista3.insertar(@b4).should eq(true)
+            @lista3.insertar(@b5).should eq(true)
             expect(@lista3.max).to eq(@b3)
         end
     end
