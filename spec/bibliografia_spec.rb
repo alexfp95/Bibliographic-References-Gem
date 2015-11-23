@@ -167,6 +167,7 @@ end
 describe Libro do
     before :all do
         @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @l2 = Libro.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -202,6 +203,12 @@ describe Libro do
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
             @l1.respond_to?(:isbnl).should eq(true)
+        end
+    end
+    
+    describe "# expectativas para comparar dos referencias" do
+        it "El libro @l1 es menor que el libro @l2" do
+            expect(@l1 < @l2).to eq(true)
         end
     end
 end
