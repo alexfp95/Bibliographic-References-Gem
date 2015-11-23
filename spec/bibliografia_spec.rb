@@ -162,6 +162,12 @@ describe Lista do
             @lista3.extraer_final.should eq(@b2)
         end
     end
+    
+    describe "# haciendo la lista enumerable" do
+        it "Comprobar el metodo max" do
+            expect(@lista3.max).to eq(@b3)
+        end
+    end
 end
 
 describe Libro do
