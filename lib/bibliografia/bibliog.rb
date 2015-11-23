@@ -1,4 +1,5 @@
 class Bibliog
+    include Comparable
     attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
     
     def initialize(a, t, e, ed, mes, anno, isbn='none', s="none")
