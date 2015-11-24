@@ -9,83 +9,83 @@ describe Bibliog do
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
-             @b1.autores.should eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
+            expect(@b1.autores).to eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
         end
     end
     describe "# almacenamiento de titulo" do
         it "Debe existir un titulo" do
-             @b1.titulo.should eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+            expect(@b1.titulo).to eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
         end
     end
     describe "# almacenamiento de serie" do
         it "Debe existir una serie" do
-             @b1.serie.should eq('The Facets of Ruby')
+            expect(@b1.serie).to eq('The Facets of Ruby')
         end
         it "No debe existir una serie" do
-             @b2.serie.should eq('none')
+            expect(@b2.serie).to eq('none')
         end
     end
     describe "# almacenamiento de editorial" do
         it "Debe existir una editorial" do
-             @b1.editorial.should eq('Pragmatic Bookshelf')
+            expect(@b1.editorial).to eq('Pragmatic Bookshelf')
         end
     end
     describe "# almacenamiento de edicion" do
         it "Debe existir un numero de edicion" do
-             @b1.edicion.should eq(4)
+            expect(@b1.edicion).to eq(4)
         end
     end
     describe "# almacenamiento de fecha" do
         it "Debe existir un dia y un mes" do
-             @b1.mes.should eq('July 7')
+            expect(@b1.mes).to eq('July 7')
         end
         it "Debe existir un año" do
-             @b1.anno.should eq(2013)
+            expect(@b1.anno).to eq(2013)
         end
     end
     describe "# almacenamiento de uno o mas ISBN" do
         it "Debe existir uno o mas ISBN" do
-             @b1.isbn.should eq(['9781937785499', '1937785491'])
+            expect(@b1.isbn).to eq(['9781937785499', '1937785491'])
         end
     end
     describe "# metodo para obtener los autores" do
         it "Debe existir un metodo para obtener la lista de autores" do
-             @b1.get_autores.should eq("Dave Thomas, Andy Hunt, Chad Fowler")
+            expect(@b1.get_autores).to eq("Dave Thomas, Andy Hunt, Chad Fowler")
         end
     end
     describe "# metodo para obtener el titulo" do
         it "Debe existir un metodo para obtener el titulo" do
-             @b1.get_titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
+            expect(@b1.get_titulo).to eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
         end
     end
     describe "# metodo para obtener la serie" do
         it "Debe existir un metodo para obtener la serie" do
-             @b1.get_serie.should eq("The Facets of Ruby")
+            expect(@b1.get_serie).to eq("The Facets of Ruby")
         end
     end
     describe "# metodo para obtener la editorial" do
         it "Debe existir un metodo para obtener la editorial" do
-             @b1.get_editorial.should eq("Pragmatic Bookshelf")
+            expect(@b1.get_editorial).to eq("Pragmatic Bookshelf")
         end
     end
     describe "# metodo para obtener el numero de edicion" do
         it "Debe existir un metodo para obtener el numero de edicion" do
-             @b1.get_edicion.should eq("4")
+            expect(@b1.get_edicion).to eq("4")
         end
     end
     describe "# metodo para obtener la fecha" do
         it "Debe existir unmetodo para obtener la fecha" do
-             @b1.get_fecha.should eq("July 7, 2013")
+            expect(@b1.get_fecha).to eq("July 7, 2013")
         end
     end
     describe "# metodo para obtener los ISBN" do
         it "Debe existir un metodo para obtener los ISBN" do
-             @b1.get_isbn.should eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
+            expect(@b1.get_isbn).to eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
         end
     end
     describe "# formateo de la referencia" do
         it "Debe existir un metodo que formatee la referencia" do
-            @b1.to_s.should eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+            expect(@b1.to_s).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
         end
     end
 end
@@ -96,17 +96,17 @@ describe Nodo do
     end
     describe "# almacenamiento de un valor" do
         it "Debe existir un valor" do
-            @nodo1.value.should eq(1)
+            expect(@nodo1.value).to eq(1)
         end
     end
     describe "# almacenamiento de un siguiente" do
         it "Debe existir un siguiente" do
-            @nodo1.next.should eq(2)
+            expect(@nodo1.next).to eq(2)
         end
     end
     describe "# almacenamiento de un anterior" do
         it "Debe existir un anterior" do
-            @nodo1.prev.should eq(3)
+            expect(@nodo1.prev).to eq(3)
         end
     end
 end
@@ -124,68 +124,68 @@ describe Lista do
     end
     describe "# creacion de una lista" do
         it "Debe existir un nodo inicio nulo" do
-            @lista.inicio.should eq(nil)
+            expect(@lista.inicio).to eq(nil)
         end
         it "Debe existir un nodo final nulo" do
-            @lista.final.should eq(nil)
+            expect(@lista.final).to eq(nil)
         end
     end
     describe "# metodo para ver si esta vacia" do
         it "Debe existir un metodo para ver si esta vacia" do
-            @lista.vacia.should eq(true)
+            expect(@lista.vacia).to eq(true)
         end
     end
     describe "# metodo para insertar y metodo para extraer un elemento" do
         it "Debe existir un metodo para insertar un elemento y otro para extraerlo" do
-            @lista2.insertar(@b1).should eq(true)
-            @lista2.extraer.should eq(@b1)
+            expect(@lista2.insertar(@b1)).to eq(true)
+            expect(@lista2.extraer).to eq(@b1)
         end
     end
     describe "# insertar y extraer varios elementos" do
         it "Se puede insertar y extraer varios elementos" do
-            @lista3.insertar(@b1).should eq(true)
-            @lista3.insertar(@b2).should eq(true)
-            @lista3.insertar(@b3).should eq(true)
-            @lista3.insertar(@b4).should eq(true)
-            @lista3.insertar(@b5).should eq(true)
-            @lista3.extraer.should eq(@b1)
-            @lista3.extraer.should eq(@b2)
-            @lista3.extraer.should eq(@b3)
-            @lista3.extraer.should eq(@b4)
-            @lista3.extraer.should eq(@b5)
+            expect(@lista3.insertar(@b1)).to eq(true)
+            expect(@lista3.insertar(@b2)).to eq(true)
+            expect(@lista3.insertar(@b3)).to eq(true)
+            expect(@lista3.insertar(@b4)).to eq(true)
+            expect(@lista3.insertar(@b5)).to eq(true)
+            expect(@lista3.extraer).to eq(@b1)
+            expect(@lista3.extraer).to eq(@b2)
+            expect(@lista3.extraer).to eq(@b3)
+            expect(@lista3.extraer).to eq(@b4)
+            expect(@lista3.extraer).to eq(@b5)
         end
     end
     describe "# insertar(inicio) y extraer(final)" do
         it "Se puede insertar por el inicio y extraer por el final" do
-            @lista3.insertar(@b2).should eq(true)
-            @lista3.insertar_inicio(@b1).should eq(true)
-            @lista3.extraer_final.should eq(@b2)
+            expect(@lista3.insertar(@b2)).to eq(true)
+            expect(@lista3.insertar_inicio(@b1)).to eq(true)
+            expect(@lista3.extraer_final).to eq(@b2)
         end
     end
     
     describe "# haciendo la lista enumerable" do
         it "Comprobar el metodo max" do
-            @lista3.insertar(@b1).should eq(true)
-            @lista3.insertar(@b2).should eq(true)
-            @lista3.insertar(@b3).should eq(true)
-            @lista3.insertar(@b4).should eq(true)
-            @lista3.insertar(@b5).should eq(true)
+            expect(@lista3.insertar(@b1)).to eq(true)
+            expect(@lista3.insertar(@b2)).to eq(true)
+            expect(@lista3.insertar(@b3)).to eq(true)
+            expect(@lista3.insertar(@b4)).to eq(true)
+            expect(@lista3.insertar(@b5)).to eq(true)
             expect(@lista3.max).to eq(@b3)
         end
         it "Comprobar el metodo min" do
-            @lista3.insertar(@b1).should eq(true)
-            @lista3.insertar(@b2).should eq(true)
-            @lista3.insertar(@b3).should eq(true)
-            @lista3.insertar(@b4).should eq(true)
-            @lista3.insertar(@b5).should eq(true)
+            expect(@lista3.insertar(@b1)).to eq(true)
+            expect(@lista3.insertar(@b2)).to eq(true)
+            expect(@lista3.insertar(@b3)).to eq(true)
+            expect(@lista3.insertar(@b4)).to eq(true)
+            expect(@lista3.insertar(@b5)).to eq(true)
             expect(@lista3.min).to eq(@b5)
         end
         it "Comprobar el metodo sort" do
-            @lista3.insertar(@b1).should eq(true)
-            @lista3.insertar(@b2).should eq(true)
-            @lista3.insertar(@b3).should eq(true)
-            @lista3.insertar(@b4).should eq(true)
-            @lista3.insertar(@b5).should eq(true)
+            expect(@lista3.insertar(@b1)).to eq(true)
+            expect(@lista3.insertar(@b2)).to eq(true)
+            expect(@lista3.insertar(@b3)).to eq(true)
+            expect(@lista3.insertar(@b4)).to eq(true)
+            expect(@lista3.insertar(@b5)).to eq(true)
             expect(@lista3.sort).to eq([@b5, @b2, @b1, @b4, @b3])
         end
     end
@@ -201,37 +201,37 @@ describe Libro do
     
     describe "# comprobar la instancia del objeto" do
         it "Es una la instancia de Libro" do
-           (@l1.instance_of?Libro).should eq(true)
+            expect(@l1.instance_of?Libro).to eq(true)
         end
     end
     
     describe " comprobar la jerarquia de clases del objeto" do
         it "Pertenece a la jerarquia de clase de Bibliog" do
-            (@l1.is_a?Bibliog).should eq(true)
+            expect(@l1.is_a?Bibliog).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de Object" do
-            (@l1.is_a?Object).should eq(true)
+            expect(@l1.is_a?Object).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de BasicObject" do
-            (@l1.is_a?BasicObject).should eq(true)
+            expect(@l1.is_a?BasicObject).to eq(true)
         end
     end
     
     describe "# comprobar la instancia del objeto con su madre" do
         it "No es una instancia de Bibliog" do
-            (@l1.instance_of?Bibliog).should eq(false)
+            expect(@l1.instance_of?Bibliog).to eq(false)
         end
     end
     
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
-            @l1.respond_to?(:autores).should eq(true)
+            expect(@l1.respond_to?(:autores)).to eq(true)
         end
     end
     
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
-            @l1.respond_to?(:isbnl).should eq(true)
+            expect(@l1.respond_to?(:isbnl)).to eq(true)
         end
     end
     
@@ -264,37 +264,37 @@ describe Revista do
     
     describe "# comprobar la instancia del objeto" do
         it "Es una instancia de Revista" do
-           (@r1.instance_of?Revista).should eq(true)
+            expect(@r1.instance_of?Revista).to eq(true)
         end
     end
     
     describe " comprobar la jerarquia de clases del objeto" do
         it "Pertenece a la jerarquia de clase de Bibliog" do
-            (@r1.is_a?Bibliog).should eq(true)
+            expect(@r1.is_a?Bibliog).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de Object" do
-            (@r1.is_a?Object).should eq(true)
+            expect(@r1.is_a?Object).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de BasicObject" do
-            (@r1.is_a?BasicObject).should eq(true)
+            expect(@r1.is_a?BasicObject). to eq(true)
         end
     end
     
     describe "# comprobar la instancia del objeto con su madre" do
         it "No es una instancia de Bibliog" do
-            (@r1.instance_of?Bibliog).should eq(false)
+            expect(@r1.instance_of?Bibliog).to eq(false)
         end
     end
     
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
-            @r1.respond_to?(:autores).should eq(true)
+            expect(@r1.respond_to?(:autores)).to eq(true)
         end
     end
     
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
-            @r1.respond_to?(:issn).should eq(true)
+            expect(@r1.respond_to?(:issn)).to eq(true)
         end
     end
 end
@@ -306,37 +306,37 @@ describe Periodico do
     
     describe "# comprobar la instancia del objeto" do
         it "Es una instancia de Periodico" do
-           (@p1.instance_of?Periodico).should eq(true)
+            expect(@p1.instance_of?Periodico).to eq(true)
         end
     end
     
     describe "# comprobar la jerarquia de clases del objeto" do
         it "Pertenece a la jerarquia de clase de Bibliog" do
-            (@p1.is_a?Bibliog).should eq(true)
+            expect(@p1.is_a?Bibliog).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de Object" do
-            (@p1.is_a?Object).should eq(true)
+            expect(@p1.is_a?Object).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de BasicObject" do
-            (@p1.is_a?BasicObject).should eq(true)
+            expect(@p1.is_a?BasicObject).to eq(true)
         end
     end
     
     describe "# comprobar la instancia del objeto con su madre" do
         it "No es una instancia de Bibliog" do
-            (@p1.instance_of?Bibliog).should eq(false)
+            expect(@p1.instance_of?Bibliog).to eq(false)
         end
     end
     
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
-            @p1.respond_to?(:autores).should eq(true)
+            expect(@p1.respond_to?(:autores)).to eq(true)
         end
     end
     
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
-            @p1.respond_to?(:columnas).should eq(true)
+            expect(@p1.respond_to?(:columnas)).to eq(true)
         end
     end
 end
@@ -348,37 +348,37 @@ describe Electronico do
     
     describe "# comprobar la instancia del objeto" do
         it "Es una instancia de Electronico" do
-           (@e1.instance_of?Electronico).should eq(true)
+            expect(@e1.instance_of?Electronico).to eq(true)
         end
     end
     
     describe "# comprobar la jerarquia de clases del objeto" do
         it "Pertenece a la jerarquia de clase de Bibliog" do
-            (@e1.is_a?Bibliog).should eq(true)
+            expect(@e1.is_a?Bibliog).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de Object" do
-            (@e1.is_a?Object).should eq(true)
+            expect(@e1.is_a?Object).to eq(true)
         end
         it "Pertenece a la jerarquia de clase de BasicObject" do
-            (@e1.is_a?BasicObject).should eq(true)
+            expect(@e1.is_a?BasicObject).to eq(true)
         end
     end
     
     describe "# comprobar la instancia del objeto con su madre" do
         it "No es una instancia de Bibliog" do
-            (@e1.instance_of?Bibliog).should eq(false)
+            expect(@e1.instance_of?Bibliog).to eq(false)
         end
     end
     
     describe "# comprobar si responde a un metodo de su madre" do
         it "Debe responder a un metodo de su madre" do
-            @e1.respond_to?(:autores).should eq(true)
+            expect(@e1.respond_to?(:autores)).to eq(true)
         end
     end
     
     describe "# comprobar si responde a un metodo propio" do
         it "Debe responder a un metodo propio" do
-            @e1.respond_to?(:url).should eq(true)
+            expect(@e1.respond_to?(:url)).to eq(true)
         end
     end
 end
