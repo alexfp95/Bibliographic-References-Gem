@@ -400,4 +400,10 @@ describe Cita do
             expect(@c1.ref).to eq(@l1)
         end
     end
+    
+    describe "#comprobar el formateo de los autores" do
+        it "Debe hacerce el formateo de un autor" do
+            expect(@c1.get_autores).to eq('Chacon S.')
+        end
+    end
 end
