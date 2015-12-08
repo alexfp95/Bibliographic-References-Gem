@@ -4,13 +4,14 @@ require 'bibliografia/lista'
 require 'bibliografia/cita'
 
 describe Bibliog do
-    before :all do
-        @b1 = Bibliog.new([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
-        @b2 = Bibliog.new([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'])
+    before :all do              
+        @b1 = Bibliog.new(['Dave','Andy','Chad'], ['Thomas', 'Hunt', 'Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b2 = Bibliog.new(['Dave','Andy','Chad'], ['Thomas', 'Hunt', 'Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'])
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
-            expect(@b1.autores).to eq([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']])
+            expect(@b1.autores).to eq(['Dave','Andy','Chad'])
+            expect(@b1.apellidos).to eq(['Thomas', 'Hunt', 'Fowler'])
         end
     end
     describe "# almacenamiento de titulo" do
@@ -394,6 +395,7 @@ describe Cita do
         @l1 = Libro.new(['Scott','Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @l2 = Libro.new([['David','Flanagan'],['Yukihiro','Matsumoto']], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
         @c1 = Cita.new(@l1)
+        @c2 = Cita.new(@l2)
     end
     
     describe "#comprobar el almacenamiento de la referencia" do
@@ -405,6 +407,9 @@ describe Cita do
     describe "#comprobar el formateo de los autores" do
         it "Debe hacerce el formateo de un autor" do
             expect(@c1.get_autores).to eq('Autor, C. S. ')
+        end
+        it "Debe hacerce el formateo de varios autores" do
+            expect(@c2.get_autores).to eq('Autor, F. D. & Autor, M. Y. ')
         end
     end
     
