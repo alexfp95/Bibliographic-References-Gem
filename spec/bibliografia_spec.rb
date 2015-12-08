@@ -396,7 +396,7 @@ describe Cita do
         @l2 = Libro.new(['David','Yukihiro'],['Flanagan','Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
         @l3 = Libro.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
         @l4 = Libro.new(['Scott'],['Chacon'], 'Abecedario', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
-        @r1 = Revista.new(['David'],['Flanagan'], 'Revista de Ruby', 'Pruebas', 1, 'February 4', 2015, ['0596586177','9780594516178'])
+        @r1 = Revista.new(['David'],['Flanagan'], 'revista de ruby', 'Pruebas', 1, 'February 4', 2015, ['0596586177','9780594516178'])
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
         @c3 = Cita.new(@l3)
@@ -435,6 +435,12 @@ describe Cita do
             expect(@citas.insertar(@c4)).to eq(true)
             expect(@citas.insertar(@c5)).to eq(true)
             expect(@citas.lordenada).to eq([@c4,@c3,@c1,@c5,@c2])
+        end
+    end
+    
+    describe "#comprobar las mayusculas" do
+        it "La primera letra de cada palabra del titulo debe estar en mayusculas" do
+            expect(@c5.get_titulo).to eq('Revista De Ruby')
         end
     end
 end

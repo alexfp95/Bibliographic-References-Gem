@@ -33,6 +33,7 @@ class Cita
             @ref.apellidos <=> other.ref.apellidos
         end
     end
+    
 end
 
 class ListaCitas
