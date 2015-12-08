@@ -31,4 +31,8 @@ class ListaCitas
     def insertar(a)
         @lista.insertar(a)
     end
+    
+    def extraer
+        @lista.extraer
+    end
 end
