@@ -425,8 +425,7 @@ describe Cita do
         it "Las citas deben estar ordenadas" do
             expect(@citas.insertar(@c2)).to eq(true)
             expect(@citas.insertar(@c1)).to eq(true)
-            expect(@citas.extraer).to eq(@c1)
-            expect(@citas.extraer).to eq(@c2)
+            expect(@citas.lordenada).to eq([@c1,@c2])
         end
     end
 end
