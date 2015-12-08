@@ -34,6 +34,19 @@ class Cita
         end
     end
     
+    def get_titulo
+        size = @ref.titulo.length
+        @ref.titulo[0] = @ref.titulo[0].capitalize
+        i=0
+        while i < size
+            if (@ref.titulo[i] == " ")
+                ref.titulo[i+1] = ref.titulo[i+1].capitalize
+            end
+            i = i+1
+        end
+        @ref.titulo
+    end
+    
 end
 
 class ListaCitas
