@@ -447,7 +447,7 @@ describe Cita do
     describe "#comprobar el formateo" do
         it "Formateo de un libro" do
             expect(@c2.to_s).to eq('Autor, F. D. & Autor, M. Y. (2008).  Titulo del libro: The Ruby Programming Language (1).  Lugar de publicacion: O’Reilly Media.  ')
-            expect(@c5.to_s).to eq('Autor, F. D. (2015).  Titulo del libro: Revista De Ruby (1).  Lugar de publicacion: Pruebas.  ')
+            expect(@c5.to_s).to eq('Autor, F. D. (2015).  Titulo de la revista: Revista De Ruby (1).  Lugar de publicacion: Pruebas.  ')
         end
     end
 end

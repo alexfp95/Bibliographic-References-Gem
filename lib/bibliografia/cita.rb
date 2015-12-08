@@ -55,7 +55,7 @@ class Cita
         end
         if @ref.instance_of?Revista
             cadena = "#{get_autores}(#{@ref.anno}).  "
-            cadena = "#{cadena}"+"Titulo del libro: #{get_titulo} (#{@ref.get_edicion}).  "
+            cadena = "#{cadena}"+"Titulo de la revista: #{get_titulo} (#{@ref.get_edicion}).  "
             cadena = "#{cadena}"+"Lugar de publicacion: #{@ref.get_editorial}.  "
         end
         cadena
