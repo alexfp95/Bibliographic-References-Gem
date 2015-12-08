@@ -113,13 +113,13 @@ describe Nodo do
     end
 end
 
-describe Lista do
+describe Lista do           
     before :each do
-        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
-        @b2 = Bibliog.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
-        @b3 = Bibliog.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
-        @b4 = Bibliog.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25', 2010, ['1934356379','9781934356371'], 'The Facets of Ruby')
-        @b5 = Bibliog.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
+        @b1 = Bibliog.new(['Dave','Andy','Chad'], ['Thomas', 'Hunt', 'Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b2 = Bibliog.new('Scott', 'Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @b3 = Bibliog.new(['David','Yukihiro'],['Flanagan','Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @b4 = Bibliog.new(['David','Dave','Bryan','Dan','Zach','Aslak'], ['Chelimsky','Astels','Helmkamp','North','Dennis','Hellesoy'],'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25', 2010, ['1934356379','9781934356371'], 'The Facets of Ruby')
+        @b5 = Bibliog.new('Richard','E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2', 2013, ['1449325866','9781449325862'])
         @lista = Lista.new()
         @lista2 = Lista.new()
         @lista3 = Lista.new()
@@ -195,10 +195,10 @@ end
 
 describe Libro do
     before :all do
-        @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
-        @l2 = Libro.new('David Flanagan', 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
-        @l3 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
-        @l4 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2015, ['9781430218333','1430218339'], 'Pro')
+        @l1 = Libro.new('Scott', 'Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @l2 = Libro.new('David', 'Flanagan', 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @l3 = Libro.new('Scott', 'Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @l4 = Libro.new('Scott', 'Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2015, ['9781430218333','1430218339'], 'Pro')
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -261,7 +261,7 @@ end
 
 describe Revista do
     before :all do
-        @r1 = Revista.new('Felipe', 'Decoracion de hogar', 'Hogares', 5, 'January 1', 2015, 9857425)
+        @r1 = Revista.new('Felipe', 'Flores','Decoracion de hogar', 'Hogares', 5, 'January 1', 2015, 9857425)
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -303,7 +303,7 @@ end
 
 describe Periodico do
     before :all do
-        @p1 = Periodico.new('Maria', 'Diario de avisos', 'Noticias', 1, 'February 10', 2013, 15)
+        @p1 = Periodico.new('Maria', 'Porr','Diario de avisos', 'Noticias', 1, 'February 10', 2013, 15)
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -345,7 +345,7 @@ end
 
 describe Electronico do
     before :all do
-        @e1 = Electronico.new('Alexis', 'Programa en Java', 'Programming', 3, 'November 17', 2015, 'www.urldelbook.com')
+        @e1 = Electronico.new('Alexis', 'Duglash','Programa en Java', 'Programming', 3, 'November 17', 2015, 'www.urldelbook.com')
     end
     
     describe "# comprobar la instancia del objeto" do
@@ -392,8 +392,8 @@ end
 
 describe Cita do
     before :each do
-        @l1 = Libro.new(['Scott','Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
-        @l2 = Libro.new([['David','Flanagan'],['Yukihiro','Matsumoto']], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
+        @l1 = Libro.new('Scott','Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @l2 = Libro.new(['David','Yukihiro'],['Flanagan','Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
     end

@@ -1,9 +1,10 @@
 class Bibliog
     include Comparable
-    attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
+    attr_reader :autores, :apellidos, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
     
-    def initialize(a, t, e, ed, mes, anno, isbn='none', s="none")
+    def initialize(a, ap, t, e, ed, mes, anno, isbn='none', s="none")
         @autores = a
+        @apellidos = ap
         @titulo = t
         @serie = s
         @editorial = e
@@ -17,12 +18,10 @@ class Bibliog
         size = @autores.length
         i = 0
         while i < (size-1)
-            cadena = "#{cadena}"+"#{@autores[i][0]} "
-            cadena = "#{cadena}"+"#{@autores[i][1]}, "
+            cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}, "
             i = i+1
         end
-        cadena = "#{cadena}"+"#{@autores[i][0]} "
-        cadena = "#{cadena}"+"#{@autores[i][1]}"
+        cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}"
     end
     
     def get_titulo
@@ -99,8 +98,8 @@ class Libro < Bibliog
     #include Comparable
     attr_reader :isbnl
     
-    def initialize (a, t, e, ed, mes, anno, isbnl, s="none")
-        super(a,t,e,ed,mes,anno,isbnl,s)
+    def initialize (a, ap, t, e, ed, mes, anno, isbnl, s="none")
+        super(a,ap,t,e,ed,mes,anno,isbnl,s)
         @isbnl=isbnl
     end
     
@@ -112,8 +111,8 @@ end
 class Revista < Bibliog
     attr_reader :issn
     
-    def initialize (a, t, e, ed, mes, anno, issn, s="none")
-        super(a,t,e,ed,mes,anno,"none",s)
+    def initialize (a, ap, t, e, ed, mes, anno, issn, s="none")
+        super(a,ap,t,e,ed,mes,anno,"none",s)
         @issn=issn
     end
 end
@@ -121,8 +120,8 @@ end
 class Periodico < Bibliog
     attr_reader :columnas
     
-    def initialize (a, t, e, ed, mes, anno, columnas, s="none")
-        super(a,t,e,ed,mes,anno,"none",s)
+    def initialize (a, ap, t, e, ed, mes, anno, columnas, s="none")
+        super(a,ap,t,e,ed,mes,anno,"none",s)
         @columnas=columnas
     end
 end
@@ -130,8 +129,8 @@ end
 class Electronico < Bibliog
     attr_reader :url
     
-    def initialize (a, t, e, ed, mes, anno, url, s="none")
-        super(a,t,e,ed,mes,anno,"none",s)
+    def initialize (a, ap, t, e, ed, mes, anno, url, s="none")
+        super(a,ap,t,e,ed,mes,anno,"none",s)
         @url=url
     end
 end
