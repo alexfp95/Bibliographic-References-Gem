@@ -398,12 +398,14 @@ describe Cita do
         @l4 = Libro.new(['Scott'],['Chacon'], 'Abecedario', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
         @r1 = Revista.new(['David'],['Flanagan'], 'revista de ruby', 'Pruebas', 1, 'February 4', 2015, ['0596586177','9780594516178'])
         @p1 = Periodico.new(['Maria'], ['Porr'],'Noticias', 'Diario de avisos', 1, 'February 10', 2013, 15)
+        @e1 = Electronico.new(['Alexis'],['Duglash'],'Programa en Java', 'Programming', 3, 'November 17', 2015, 'www.urldelbook.com')
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
         @c3 = Cita.new(@l3)
         @c4 = Cita.new(@l4)
         @c5 = Cita.new(@r1)
         @c6 = Cita.new(@p1)
+        @c7 = Cita.new(@e1)
         @citas = ListaCitas.new()
     end
     
@@ -451,6 +453,7 @@ describe Cita do
             expect(@c2.to_s).to eq('Autor, F. D. & Autor, M. Y. (2008).  Titulo del libro: The Ruby Programming Language (1).  Lugar de publicacion: O’Reilly Media.  ')
             expect(@c5.to_s).to eq('Autor, F. D. (2015).  Titulo de la revista: Revista De Ruby (1).  Lugar de publicacion: Pruebas.  ')
             expect(@c6.to_s).to eq('Autor, P. M. (2013).  Titulo del articulo: Noticias (1).  Columnas: 15.  Lugar de publicacion: Diario de avisos.  ')
+            expect(@c7.to_s).to eq('Autor, D. A. (2015).  Titulo: Programa en Java (3).  Lugar de publicacion: Programming.  Disponible en: www.urldelbook.com  ')
         end
     end
 end
