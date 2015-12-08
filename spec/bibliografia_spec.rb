@@ -394,4 +394,10 @@ describe Cita do
         @l1 = Libro.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @c1 = Cita.new(@l1)
     end
+    
+    describe "#comprobar el almacenamiento de la referencia" do
+        it "Debe existir una referencia" do
+            expect(@c1.ref).to eq(@l1)
+        end
+    end
 end
