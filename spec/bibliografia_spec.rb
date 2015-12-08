@@ -414,9 +414,12 @@ describe Cita do
         end
     end
     
-    describe "#comprobar la insercion de una cita" do
+    describe "#comprobar la insercion y extraccion de una cita" do
         it "Debe insertarse una cita" do
             expect(@citas.insertar(@c1)).to eq(true)
+        end
+        it "Debe extraerse la cita" do
+            expect(@citas.extraer).to eq(@c1)
         end
     end
     
