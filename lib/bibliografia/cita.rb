@@ -20,3 +20,7 @@ class Cita
         cadena = "#{cadena}"+"#{@ref.apellidos[i][0]}. #{@ref.autores[i][0]}. "
     end
 end
+
+class ListaCitas
+    
+end
