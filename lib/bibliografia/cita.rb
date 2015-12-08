@@ -22,5 +22,9 @@ class Cita
 end
 
 class ListaCitas
+    attr_accessor :lista
     
+    def initialize
+        @lista = Lista.new()
+    end
 end
