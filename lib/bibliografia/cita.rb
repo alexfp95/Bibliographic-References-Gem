@@ -7,4 +7,5 @@ class Cita
     def initialize (r)
        @ref=r 
     end
+
 end

@@ -5,8 +5,8 @@ require 'bibliografia/cita'
 
 describe Bibliog do
     before :all do
-        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
-        @b2 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'])
+        @b1 = Bibliog.new([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b2 = Bibliog.new([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'])
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
@@ -403,7 +403,7 @@ describe Cita do
     
     describe "#comprobar el formateo de los autores" do
         it "Debe hacerce el formateo de un autor" do
-            expect(@c1.get_autores).to eq('Chacon S.')
+            expect(@c1.get_autores).to eq('C. S. ')
         end
     end
 end
