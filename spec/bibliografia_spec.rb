@@ -392,7 +392,7 @@ end
 
 describe Cita do
     before :each do
-        @l1 = Libro.new('Scott','Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
+        @l1 = Libro.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @l2 = Libro.new(['David','Yukihiro'],['Flanagan','Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
@@ -412,6 +412,5 @@ describe Cita do
             expect(@c2.get_autores).to eq('Autor, F. D. & Autor, M. Y. ')
         end
     end
-    
     
 end

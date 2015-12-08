@@ -10,19 +10,13 @@ class Cita
 
     def get_autores
         size = @ref.autores.length
-        if (size == 1)
-            cadena = "Autor, "
-            cadena = "#{cadena}"+"#{@ref.autores[1][0]}. "
-            cadena = "#{cadena}"+"#{@ref.autores[0][0]}. "
-        else
-            i = 0
-            while i < size
-                cadena = "Autor, "
-                cadena = "#{cadena}"+"#{@ref.autores[i][1][0]}. "
-                cadena = "#{cadena}"+"#{@ref.autores[i][0][0]}. "
-                i = i+1
-            end
-            cadena
+        i = 0
+        while i < (size-1)
+            cadena = "#{cadena}"+"Autor, "
+            cadena = "#{cadena}"+"#{@ref.apellidos[i][0]}. #{@ref.autores[i][0]}. & "
+            i = i+1
         end
+        cadena = "#{cadena}"+"Autor, "
+        cadena = "#{cadena}"+"#{@ref.apellidos[i][0]}. #{@ref.autores[i][0]}. "
     end
 end
