@@ -60,9 +60,15 @@ class Cita
         end
         if @ref.instance_of?Periodico
             cadena = "#{get_autores}(#{@ref.anno}).  "
-            cadena = "#{cadena}"+"Titulo del articulo: #{get_titulo} (#{@ref.get_edicion}).  "
+            cadena = "#{cadena}"+"Titulo del articulo: #{@ref.get_titulo} (#{@ref.get_edicion}).  "
             cadena = "#{cadena}"+"Columnas: #{@ref.columnas}.  "
             cadena = "#{cadena}"+"Lugar de publicacion: #{@ref.get_editorial}.  "
+        end
+        if @ref.instance_of?Electronico
+            cadena = "#{get_autores}(#{@ref.anno}).  "
+            cadena = "#{cadena}"+"Titulo: #{@ref.get_titulo} (#{@ref.get_edicion}).  "
+            cadena = "#{cadena}"+"Lugar de publicacion: #{@ref.get_editorial}.  "
+            cadena = "#{cadena}"+"Disponible en: #{@ref.url}  "
         end
         cadena
     end
