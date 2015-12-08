@@ -395,9 +395,11 @@ describe Cita do
         @l1 = Libro.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2009, ['9781430218333','1430218339'], 'Pro')
         @l2 = Libro.new(['David','Yukihiro'],['Flanagan','Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4', 2008, ['0596516177','9780596516178'])
         @l3 = Libro.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
+        @l4 = Libro.new(['Scott'],['Chacon'], 'Abecedario', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
         @c3 = Cita.new(@l3)
+        @c4 = Cita.new(@l4)
         @citas = ListaCitas.new()
     end
     
@@ -428,7 +430,8 @@ describe Cita do
             expect(@citas.insertar(@c2)).to eq(true)
             expect(@citas.insertar(@c1)).to eq(true)
             expect(@citas.insertar(@c3)).to eq(true)
-            expect(@citas.lordenada).to eq([@c3,@c1,@c2])
+            expect(@citas.insertar(@c4)).to eq(true)
+            expect(@citas.lordenada).to eq([@c4,@c3,@c1,@c2])
         end
     end
 end
