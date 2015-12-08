@@ -416,7 +416,7 @@ describe Cita do
     
     describe "#comprobar la insercion de una cita" do
         it "Debe insertarse una cita" do
-            expect(@citas.lista.insertar(@c1)).to eq(true)
+            expect(@citas.insertar(@c1)).to eq(true)
         end
     end
     

@@ -27,4 +27,8 @@ class ListaCitas
     def initialize
         @lista = Lista.new()
     end
+    
+    def insertar(a)
+        @lista.insertar(a)
+    end
 end
