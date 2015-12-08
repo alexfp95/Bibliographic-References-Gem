@@ -397,7 +397,7 @@ describe Cita do
         @l3 = Libro.new(['Scott'],['Chacon'], 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
         @l4 = Libro.new(['Scott'],['Chacon'], 'Abecedario', 'Apress', 2009, 'August 27', 2000, ['9781430218333','1430218339'], 'Pro')
         @r1 = Revista.new(['David'],['Flanagan'], 'revista de ruby', 'Pruebas', 1, 'February 4', 2015, ['0596586177','9780594516178'])
-        @p1 = Periodico.new('Maria', 'Porr','Diario de avisos', 'Noticias', 1, 'February 10', 2013, 15)
+        @p1 = Periodico.new(['Maria'], ['Porr'],'Noticias', 'Diario de avisos', 1, 'February 10', 2013, 15)
         @c1 = Cita.new(@l1)
         @c2 = Cita.new(@l2)
         @c3 = Cita.new(@l3)
