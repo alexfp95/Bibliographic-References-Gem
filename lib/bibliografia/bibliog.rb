@@ -17,10 +17,12 @@ class Bibliog
         size = @autores.length
         i = 0
         while i < (size-1)
-            cadena = "#{cadena}"+"#{@autores[i]}, "
+            cadena = "#{cadena}"+"#{@autores[i][0]} "
+            cadena = "#{cadena}"+"#{@autores[i][1]}, "
             i = i+1
         end
-        cadena = "#{cadena}"+"#{@autores[i]}"
+        cadena = "#{cadena}"+"#{@autores[i][0]} "
+        cadena = "#{cadena}"+"#{@autores[i][1]}"
     end
     
     def get_titulo

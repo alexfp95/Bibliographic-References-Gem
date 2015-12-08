@@ -10,7 +10,7 @@ describe Bibliog do
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
-            expect(@b1.autores).to eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
+            expect(@b1.autores).to eq([['Dave','Thomas'], ['Andy','Hunt'],['Chad','Fowler']])
         end
     end
     describe "# almacenamiento de titulo" do
