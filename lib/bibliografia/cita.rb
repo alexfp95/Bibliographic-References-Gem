@@ -77,7 +77,7 @@ end
 
 class ListaCitas
     attr_accessor :lista, :lordenada
-    
+     
     def initialize
         @lista = Lista.new()
     end
